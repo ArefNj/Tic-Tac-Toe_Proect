@@ -5,6 +5,7 @@ public class Menu {
 
         // creat a Scanner
         Scanner Scan = new Scanner(System.in);
+
         // print menu
         System.out.print   ("""
                 Welcome to Tic-Tac-Toe game
@@ -12,7 +13,9 @@ public class Menu {
                         2.Info\s
                         3.Exit\s
                 --->\040""");
+        // init key and get it from user
         int key = Scan.nextInt();
+
 
         switch (key) {
             case 1 -> // PvP menu
