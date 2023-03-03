@@ -1,5 +1,17 @@
 public class Game {
-    public void test(){
-        System.out.println("GAME STARTED");
+    public void bored(){
+        System.out.printf("""
+                %2d |%2d |%2d |%2d
+                --------------
+                %2d |%2d |%2d |%2d
+                --------------
+                %2d |%2d |%2d |%2d
+                --------------
+                %2d |%2d |%2d |%2d
+                """
+                , 1 , 2 , 3 , 4
+                , 5 , 6 , 7 , 8
+                , 9 ,10 ,11 ,12
+                ,13 ,14 ,15 ,16);
     }
 }

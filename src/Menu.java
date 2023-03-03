@@ -17,21 +17,28 @@ public class Menu {
 
         // init key and get it from user
         int key = Scan.nextInt();
+
+        // Checking input
         switch (key) {
-            case 1 : // PvP menu
+
+            // PvP menu
+            case 1 :
                     this.isPvP_menu();
-                    new Game().test();
+                    new Game().bored();
                     break;
 
-            case 2 : { // Info menu
+            // Info menu
+            case 2 : {
                 this.info();
                 this.main_menu();
                 break;
             }
-            case 3 : // Exit
+            // Exit
+            case 3 :
                     System.out.println("Tnx for your attention ^.^\n\n");
                     break;
-            default : { // if input was not valid
+            // if input was not valid
+            default : {
                 System.out.println("Please Enter the Correct Entry (*_ *;)");
                 pause();
                 this.main_menu();
@@ -67,26 +74,23 @@ public class Menu {
 
     // PvP Menu (choosing between human and computer)
     public void isPvP_menu(){
-        Scanner scanner = new Scanner(System.in);
         System.out.print("""
                     # Choose the second player
                     1. Human
                     2. Computer
                     """);
-        int PvP_key =  scanner.nextInt();
 
-        switch (PvP_key){
-            case 1:
-                setPvP(true);
-                break;
-            case 2:
-                setPvP(false);
-                break;
-            default:
+        // init PvP key and getIt from user
+        int PvP_key = new Scanner(System.in).nextInt();
+        // Checking input
+        switch (PvP_key) {
+            case 1 -> setPvP(true);
+            case 2 -> setPvP(false);
+            default -> {
                 System.out.println("Please Enter the Correct Entry (*_ *;)");
                 pause();
                 isPvP_menu();
-                break;
+            }
         }
     }
 

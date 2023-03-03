@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59399bd4-a635-4e5f-991d-1c3ef8a9822a" name="Changes" comment="add system pause , fixing PvP menu , creat Game class">
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
       <workItem from="1677417449702" duration="4808000" />
       <workItem from="1677558067551" duration="3874000" />
       <workItem from="1677563122427" duration="154000" />
-      <workItem from="1677821963231" duration="4627000" />
+      <workItem from="1677821963231" duration="5692000" />
     </task>
     <task id="LOCAL-00001" summary="Writing menu and abstractions">
       <created>1677420458087</created>
@@ -96,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677562722680</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add system pause , fixing PvP menu , creat Game class">
+      <created>1677826763715</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677826763715</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
