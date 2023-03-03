@@ -1,8 +1,8 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public void main_menu() throws IOException {
+    private boolean isPvP;
+    public void main_menu(){
 
         // creat a Scanner
         Scanner Scan = new Scanner(System.in);
@@ -14,33 +14,42 @@ public class Menu {
                         2.Info\s
                         3.Exit\s
                 --->\040""");
+
         // init key and get it from user
         int key = Scan.nextInt();
-
-
         switch (key) {
-            case 1 -> // PvP menu
+            case 1 : // PvP menu
                     this.isPvP_menu();
-            case 2 -> { // Info menu
+                    new Game().test();
+                    break;
+
+            case 2 : { // Info menu
                 this.info();
-                System.out.print   ("""
+                this.main_menu();
+                break;
+            }
+            case 3 : // Exit
+                    System.out.println("Tnx for your attention ^.^\n\n");
+                    break;
+            default : { // if input was not valid
+                System.out.println("Please Enter the Correct Entry (*_ *;)");
+                pause();
+                this.main_menu();
+                break;
+            }
+        }
+    }
+
+    // Info menu
+    public void info(){
+        System.out.print   ("""
                                 Advanced Programming Project #1
                                     
-                          Tic-Tac-Toe game in a console application
-                                 
-                        There are a few differences with the classical one:
-                            # The board is square with 16 cells (4*4)
-                            # Some cells will be randomly locked
-                            #The goal of Tic-Tac-Toe is to be one of the players to get three same symbols in a row
-                            # Up to 2 players can play simultaneously (PvP or single-player)
-
-                            Player 1 as ' X ' and player 2 as ' O ' enter their moves in each step.
-                                    
-                            # there are only three possible results:
-                                o a player wins
-                                o his opponent (human or computer) wins
-                                o it's a tie! (For equal or impossible score)
-                                    
+                            Tic-Tac-Toe game in a console application
+                            
+                        #The goal of Tic-Tac-Toe is to be one of the players to get three same symbols in a row
+                        #Player 1 as ' X ' and player 2 as ' O ' enter their moves in each step.
+                
                             Author : Aref Najmaddini
                             Email  : Aref.Najmaddini@gmail.com
                             Tnx to :
@@ -51,41 +60,49 @@ public class Menu {
                                 Ali Khaleghi Yekta
                                 Pooria Azami
                         """);
-                System.out.println("Press Enter key to continue");
+        pause();
 
 
-                Scan.next();
+    }
 
+    // PvP Menu (choosing between human and computer)
+    public void isPvP_menu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("""
+                    # Choose the second player
+                    1. Human
+                    2. Computer
+                    """);
+        int PvP_key =  scanner.nextInt();
 
-                this.main_menu();
-            }
-            case 3 -> // Exit
-                    System.out.println("Tnx for your attention ^.^\n\n");
-            default -> { // if input was not valid
-                System.out.println("Please Enter the Correct Entry (*_ *;) \n\nPress Enter key to continue");
-                System.in.read();
-                this.main_menu();
-                System.out.println("writing menu and abstractions");
-            }
+        switch (PvP_key){
+            case 1:
+                setPvP(true);
+                break;
+            case 2:
+                setPvP(false);
+                break;
+            default:
+                System.out.println("Please Enter the Correct Entry (*_ *;)");
+                pause();
+                isPvP_menu();
+                break;
         }
-
-
-
-
-
-
     }
 
-    public void info(){
-
-        System.out.println("** INFO **");
-
+    // Getter
+    public boolean isPvP() {
+        return isPvP;
     }
 
-    public int isPvP_menu(){
+    // Setter
+    public void setPvP(boolean pvP) {
+        isPvP = pvP;
+    }
 
-        System.out.println("** PVP **");
-
-        return 0;
+    // System Pause
+    public void pause(){
+        System.out.println("Press Any Key To Continue...");
+        new java.util.Scanner(System.in).nextLine();
     }
 }
