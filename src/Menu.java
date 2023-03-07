@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Menu {
     private boolean isPvP;
+
+    // constructor
     public void main_menu(){
 
         // creat a Scanner
@@ -24,7 +26,11 @@ public class Menu {
             // PvP menu
             case 1 :
                     this.isPvP_menu();
-                    new Game().bored();
+                    if(isPvP)
+                        new Game().PvP();
+                    else
+                        new Game().singlePlayer();
+
                     break;
 
             // Info menu
