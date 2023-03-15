@@ -1,15 +1,13 @@
 import java.util.Scanner;
-
 public class Menu {
     private boolean isPvP;
-
-    // constructor
+    /** Constructor */
     public void main_menu(){
-
-        // creat a Scanner
+        // Creat a Scanner
         Scanner Scan = new Scanner(System.in);
 
-        // print menu
+        // Print Menu
+        System.out.print("\033[97m");
         System.out.print   ("""
                 Welcome to Tic-Tac-Toe game
                         1.Start\s
@@ -17,43 +15,35 @@ public class Menu {
                         3.Exit\s
                 --->\040""");
 
-        // init key and get it from user
+        // Init key for switch case
         int key = Scan.nextInt();
 
         // Checking input
         switch (key) {
-
             // PvP menu
-            case 1 :
-                    this.isPvP_menu();
-                    if(isPvP)
-                        new Game().PvP();
-                    else
-                        new Game().singlePlayer();
-
-                    break;
-
+            case 1 -> {
+                this.isPvP_menu();
+                if (isPvP)
+                    new Game().PvP();
+                else
+                    new Game().singlePlayer();
+            }
             // Info menu
-            case 2 : {
+            case 2 -> {
                 this.info();
                 this.main_menu();
-                break;
             }
             // Exit
-            case 3 :
-                    System.out.println("Tnx for your attention ^.^\n\n");
-                    break;
-            // if input was not valid
-            default : {
+            case 3 -> System.out.println("Tnx for your attention ^.^\n\n");
+            // If input was Invalid
+            default -> {
                 System.out.println("Please Enter the Correct Entry (*_ *;)");
                 pause();
                 this.main_menu();
-                break;
             }
         }
     }
-
-    // Info menu
+    /** Info Menu */
     public void info(){
         System.out.print   ("""
                                 Advanced Programming Project #1
@@ -77,8 +67,7 @@ public class Menu {
 
 
     }
-
-    // PvP Menu (choosing between human and computer)
+    /** PvP Menu (choosing between human and computer)  */
     public void isPvP_menu(){
         System.out.print("""
                     # Choose the second player
@@ -88,10 +77,11 @@ public class Menu {
 
         // init PvP key and getIt from user
         int PvP_key = new Scanner(System.in).nextInt();
+
         // Checking input
         switch (PvP_key) {
-            case 1 -> setPvP(true);
-            case 2 -> setPvP(false);
+            case 1 -> isPvP = true;
+            case 2 -> isPvP = false;
             default -> {
                 System.out.println("Please Enter the Correct Entry (*_ *;)");
                 pause();
@@ -99,18 +89,7 @@ public class Menu {
             }
         }
     }
-
-    // Getter
-    public boolean isPvP() {
-        return isPvP;
-    }
-
-    // Setter
-    public void setPvP(boolean pvP) {
-        isPvP = pvP;
-    }
-
-    // System Pause
+    /** System Pause */
     public void pause(){
         System.out.println("Press Any Key To Continue...");
         new java.util.Scanner(System.in).nextLine();
