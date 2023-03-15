@@ -69,6 +69,7 @@ public class Game {
                 emptyCells.remove((Integer) player1Input);
 
                     // My Algorithm  for check win conditions
+                    // At the last moment I realized that's not working :(
                     /*
                  * //                if (Player1.size() >= 3){
 //                    Collections.sort(Player1);
